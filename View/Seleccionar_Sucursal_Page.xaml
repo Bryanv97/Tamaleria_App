@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Tamaleria_Miguelena.View.Seleccionar_Sucursal_Page"
+             xmlns:vm="clr-namespace:Tamaleria_Miguelena.ViewModel">
+    <ContentPage.BindingContext>
+        <vm:Seleccionar_Sucursal_ViewModel></vm:Seleccionar_Sucursal_ViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Margin="20,20,20,20">
+            <Label Text="Selecione Una Sucursal: " FontSize="Medium" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"></Label>
+            <Frame  BorderColor="#6DA644" CornerRadius="15"  >
+                <Picker SelectedItem="{Binding ItemSelected}"
+                    ItemsSource="{Binding Sucursales}"
+                    ItemDisplayBinding="{Binding nombre_sucursal}"
+                     >
+                </Picker>
+            </Frame>
+            <Frame BorderColor="#6DA644" CornerRadius="15" HorizontalOptions="CenterAndExpand" Padding="30" VerticalOptions="CenterAndExpand">
+                <StackLayout>
+                    <Label Text="Sucursal Asignada: " FontSize="Medium" FontAttributes="Bold"></Label>
+                    <Label Text="{Binding Nombre}" FontSize="Medium"  HorizontalOptions="CenterAndExpand"></Label>
+                </StackLayout>
+            </Frame>
+          
+            <Button Text="Asignar Sucursal A Dispositivo" Command="{Binding asignarsucursal}" TextColor="White" FontAttributes="Bold" BackgroundColor="#8AD820"  CornerRadius="15"></Button>
+            <Button Text="Eliminar Sucursal Asignada" Command="{Binding eliminarsucursal}" TextColor="White" FontAttributes="Bold" BackgroundColor="Red"  CornerRadius="15"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

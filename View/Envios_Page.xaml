@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Tamaleria_Miguelena.View.Envios_Page"
+             xmlns:vm="clr-namespace:Tamaleria_Miguelena.ViewModel">
+    <ContentPage.BindingContext>
+        <vm:Envios_ViewModel></vm:Envios_ViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+        <StackLayout Margin="0,15,0,15">
+            <Frame CornerRadius="15"  VerticalOptions="FillAndExpand" Margin="10,0,10,0">
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Lugar de entrega" VerticalOptions="Center" TextColor="#6DA644"/>
+                    <StackLayout HorizontalOptions="EndAndExpand" >
+                        <Frame CornerRadius="15" Padding="10,0,10,0" HorizontalOptions="EndAndExpand" >
+                            <Picker SelectedItem="{Binding ItemSelected}"
+                                        ItemsSource="{Binding Sucursales}"
+                                        ItemDisplayBinding="{Binding nombre_sucursal}">
+                            </Picker>
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout >
+            <StackLayout Margin="0,15,0,15">
+                <Button Text="GUARDAR" Command="{Binding add_envio}" x:Name="BtnGuardar"  BackgroundColor="#6DA644" CornerRadius="20" TextColor="White" FontAttributes="Bold"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

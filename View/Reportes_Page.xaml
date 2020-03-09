@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Tamaleria_Miguelena.View.Reportes_Page">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Frame>
+                    <Label Text="Reportes De Todas Las Sucursales" HorizontalOptions="CenterAndExpand" FontSize="Medium" TextColor="#6DA644" FontAttributes="Bold" ></Label>
+                </Frame>
+                <Frame CornerRadius="15">
+                    <Button  Text="Ver Pedidos Pendientes" TextColor="White" FontAttributes="Bold" BackgroundColor="#8AD820"  CornerRadius="15" Clicked="Button_Clicked" />
+                </Frame>
+                <Frame  CornerRadius="15">
+                    <Button  Text="Ver Envios" TextColor="White" FontAttributes="Bold" BackgroundColor="#8AD820"  CornerRadius="15"  Clicked="Button_Clicked_1" />
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

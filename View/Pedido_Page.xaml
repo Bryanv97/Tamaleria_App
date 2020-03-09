@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Tamaleria_Miguelena.View.Pedido_Page"
+             xmlns:vm="clr-namespace:Tamaleria_Miguelena.ViewModel">
+    <ContentPage.BindingContext>
+        <vm:Pedidos_ViewModel>
+        </vm:Pedidos_ViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Margin="10,15,10,15"  >
+            <StackLayout Padding="10,0,10,0" Margin="10,0,10,0">
+                <StackLayout Margin="0,15,0,15">
+                    <Frame CornerRadius="15"  VerticalOptions="FillAndExpand" Margin="10,0,10,0">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Fecha de orden" VerticalOptions="Center" TextColor="#6DA644"/>
+                            <StackLayout HorizontalOptions="EndAndExpand" >
+                                <Frame CornerRadius="15" Padding="10,0,10,0" HorizontalOptions="EndAndExpand" >
+                                    <DatePicker  MinimumDate="01/01/2020" MaximumDate="12/31/2050"  Date="{Binding fecha_entrega}" TextColor="Gray">
+                                        <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                                    </DatePicker>
+                                </Frame>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout >
+                <StackLayout Margin="0,15,0,15">
+                    <Frame CornerRadius="15"  VerticalOptions="FillAndExpand" Margin="10,0,10,0">
+                        <StackLayout Orientation="Horizontal" >
+                            <Label Text="Lugar de entrega" VerticalOptions="Center" TextColor="#6DA644"/>
+                            <StackLayout HorizontalOptions="EndAndExpand" >
+                                <Frame CornerRadius="15" Padding="10,0,10,0" HorizontalOptions="EndAndExpand" >
+                                    <Picker SelectedItem="{Binding ItemSelected}"
+                                        ItemsSource="{Binding Sucursales}"
+                                        ItemDisplayBinding="{Binding nombre_sucursal}"
+                                            IsEnabled="{Binding !EnvioP}">
+                                    </Picker>
+                                </Frame>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout >
+                 <StackLayout Margin="0,15,0,15">
+                        <Frame CornerRadius="15"  VerticalOptions="FillAndExpand" Margin="10,0,10,0" HorizontalOptions="CenterAndExpand">
+                            <StackLayout HorizontalOptions="EndAndExpand">
+                                <Label Text="Entrega A Domicilio" VerticalOptions="Center" TextColor="#6DA644"></Label>
+                                <Switch IsToggled="{Binding EnvioP}" OnColor="#6DA644" HorizontalOptions="CenterAndExpand" ></Switch>
+                            </StackLayout>
+                        </Frame>
+                </StackLayout>
+                    <StackLayout Margin="0,15,0,15">
+                        <Frame CornerRadius="15"  VerticalOptions="FillAndExpand" Margin="10,0,10,0">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Ingrese El Lugar De Entrega" VerticalOptions="Center" TextColor="#6DA644"/>
+                                <StackLayout HorizontalOptions="EndAndExpand" >
+                                    <Frame CornerRadius="15" Padding="10,0,10,0" HorizontalOptions="EndAndExpand" >
+                                        <Entry Placeholder="Entrega" x:Name="EntryNombre" TextColor="#8AD820" 
+                                           PlaceholderColor="#D9D9D9" HorizontalOptions="FillAndExpand"  Text="{Binding lentrega}" IsEnabled="{Binding EnvioP}"/>
+                                    </Frame>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout >
+                    <StackLayout Margin="0,15,0,15">
+                    <Frame CornerRadius="15"  VerticalOptions="FillAndExpand" Margin="10,0,10,0">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Nombre del cliente" VerticalOptions="Center" TextColor="#6DA644"/>
+                            <StackLayout HorizontalOptions="EndAndExpand" >
+                                <Frame CornerRadius="15" Padding="10,0,10,0" HorizontalOptions="EndAndExpand" >
+                                    <Entry Placeholder="Nombre" TextColor="#8AD820" 
+                                           PlaceholderColor="#D9D9D9" HorizontalOptions="FillAndExpand"  Text="{Binding  nombrecliente}"/>
+                                </Frame>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout >
+                <StackLayout Margin="0,15,0,15">
+                    <Frame CornerRadius="15"  VerticalOptions="FillAndExpand" Margin="10,0,10,0">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Numero de Telefono" VerticalOptions="Center" TextColor="#6DA644"/>
+                            <StackLayout HorizontalOptions="EndAndExpand" >
+                                <Frame CornerRadius="15" Padding="10,0,10,0" HorizontalOptions="EndAndExpand" >
+                                    <Entry Placeholder="Telefono" TextColor="#8AD820" 
+                                           PlaceholderColor="#D9D9D9" HorizontalOptions="FillAndExpand"  Keyboard="Numeric" Text="{Binding telefono}"/>
+                                </Frame>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout >
+                    <StackLayout Margin="0,15,0,15">
+                        <Frame CornerRadius="15"  VerticalOptions="FillAndExpand" Margin="10,0,10,0">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Correlativo" VerticalOptions="Center" TextColor="#6DA644"/>
+                                <StackLayout HorizontalOptions="EndAndExpand" >
+                                    <Frame CornerRadius="15" Padding="10,0,10,0" HorizontalOptions="EndAndExpand" >
+                                        <Entry Placeholder="Correlativo" TextColor="#8AD820" 
+                                           PlaceholderColor="#D9D9D9" HorizontalOptions="FillAndExpand"  Keyboard="Numeric" Text="{Binding  correlativo}"/>
+                                    </Frame>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout >
+                    <StackLayout Margin="0,15,0,15">
+                    <Button Text="GUARDAR" Command="{Binding add_order}" x:Name="BtnGuardar"  BackgroundColor="#6DA644" CornerRadius="20" TextColor="White" FontAttributes="Bold"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

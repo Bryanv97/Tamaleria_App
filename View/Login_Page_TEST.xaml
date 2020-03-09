@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Tamaleria_Miguelena.View.Login_Page_TEST"
+             xmlns:vm="clr-namespace:Tamaleria_Miguelena.ViewModel">
+    <ContentPage.BindingContext>
+        <vm:Login_ViewModel></vm:Login_ViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="Usuario" Text="{Binding usuario}"></Entry>
+            <Entry Placeholder="Contraseña" Text="{Binding pass}" ></Entry>
+            <Button Text="Inicio" Command="{Binding Efectuar_Login}" ></Button>
+            <Button Text="Ver Usuario Registrado"  Command="{Binding VerUsuarioActivo}"></Button>
+            <Button Text="Cerrar"  Command="{Binding CerrarCorte}"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Tamaleria_Miguelena.View.Login_Page"
+             xmlns:vm="clr-namespace:Tamaleria_Miguelena.ViewModel">
+    <ContentPage.BindingContext>
+        <vm:Login_ViewModel></vm:Login_ViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <FlexLayout Direction="Column"  Padding="10,0,10,0">
+            <FlexLayout FlexLayout.Basis="800" 
+                        JustifyContent="Center" Wrap="Wrap" Direction="Column"
+                        AlignContent="Center" AlignItems="Center">
+                <StackLayout Padding="10,0,10,0">
+                    <Label Text="Bienvenidos" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  
+                       FontAttributes="Bold" FontSize="Large"/>
+                    <Frame CornerRadius="200" HeightRequest="125" >
+                        <Image Source="logo.png" HeightRequest="140" WidthRequest="280" HorizontalOptions="Center" VerticalOptions="Center"  />
+                    </Frame >
+                    <StackLayout Margin="20">
+                        <Label Text="Tamaleria Migueleña" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" 
+                       FontSize="Large" FontAttributes="Bold" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout HorizontalOptions="Center" WidthRequest="300" Spacing="25" Margin="5">
+                    <Frame CornerRadius="15" BackgroundColor="#6DA644" VerticalOptions="FillAndExpand" Margin="10,0,10,0">
+                        <StackLayout>
+                            <Label Text="Registrate" TextColor="#8AD820" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Large"/>
+                            <Frame CornerRadius="15" BackgroundColor="White"  HorizontalOptions="FillAndExpand" 
+                                   VerticalOptions="FillAndExpand" Margin="10,0,10,0" Padding="5" >
+                                <StackLayout Orientation="Horizontal" >
+                                    <Image Source="usuario.png" HeightRequest="32" WidthRequest="32"/>
+                                    <Entry Text="{Binding usuario}"  Placeholder="Usuario" TextColor="#8AD820" 
+                                           PlaceholderColor="#8AD820" HorizontalOptions="FillAndExpand"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame CornerRadius="15" BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10,0,10,0" Padding="5">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="pass.png" HeightRequest="32" WidthRequest="32"/>
+                                    <Entry  Text="{Binding pass}" Placeholder="Contraseña" TextColor="#8AD820"  PlaceholderColor="#8AD820" IsPassword="True" HorizontalOptions="FillAndExpand" />
+                                </StackLayout>
+                            </Frame>
+                            <StackLayout>
+                                <Button Command="{Binding Efectuar_Login}" Text="Ingresar" TextColor="White" FontAttributes="Bold" BackgroundColor="#8AD820"  CornerRadius="15" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </FlexLayout>
+        </FlexLayout>
+    </ContentPage.Content>
+</ContentPage>

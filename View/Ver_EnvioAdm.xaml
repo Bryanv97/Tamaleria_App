@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Tamaleria_Miguelena.View.Ver_EnvioAdm"
+             xmlns:vm="clr-namespace:Tamaleria_Miguelena.ViewModel">
+    <ContentPage.BindingContext>
+        <vm:Ver_Envios_Adm_ViewModel></vm:Ver_Envios_Adm_ViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding pedido}"
+                  IsPullToRefreshEnabled="True"
+                  IsRefreshing="{Binding estado}"
+                  RefreshCommand="{Binding pull}"
+                  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame BorderColor="#6DA644" CornerRadius="15" Margin="20,20,20,20">
+                            <StackLayout >
+                                <StackLayout Orientation="Horizontal" >
+                                    <Label Text="Origen: " HorizontalOptions="CenterAndExpand" FontAttributes="Bold"></Label>
+                                    <Label Text="{Binding origen}" HorizontalOptions="CenterAndExpand"></Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Destino: " HorizontalOptions="CenterAndExpand" FontAttributes="Bold"></Label>
+                                    <Label Text="{Binding destino}" HorizontalOptions="CenterAndExpand"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

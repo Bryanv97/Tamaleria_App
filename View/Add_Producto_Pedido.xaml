@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Tamaleria_Miguelena.View.Add_Producto_Pedido"
+             xmlns:vm="clr-namespace:Tamaleria_Miguelena.ViewModel">
+    <ContentPage.BindingContext>
+        <vm:Agregar_Producto_Detalle></vm:Agregar_Producto_Detalle>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+       <StackLayout>
+            <StackLayout>
+                <Label Text="Ingrese El Pedido"></Label>
+                <Label Text="Ingrese Producto"></Label>
+                <Picker SelectedItem="{Binding ItemSelected}"
+                    ItemsSource="{Binding inventario}"
+                    ItemDisplayBinding="{Binding nombre_producto}"
+                     >
+                </Picker>
+                <Label Text="Ingrese Cantidad" ></Label>
+                <Entry Placeholder="Ingrese Cantidad" Text="{Binding cantidad}"></Entry>
+                <Button Text="Agregar Producto" Command="{Binding add_product_list}"></Button>
+
+            </StackLayout> 
+            <StackLayout>
+                <Frame>
+                    <ListView ItemsSource="{Binding Pedido}"
+                  HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout>
+                                        <Label Text="{Binding nombre_producto}"></Label>
+                                        <Label Text="{Binding cantidad}"></Label>
+                                        <Label Text="{Binding precio}"></Label>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
+            </StackLayout>
+            <Button Text="Guardar Orden " Command="{Binding Guardar_producto}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

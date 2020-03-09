@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Tamaleria_Miguelena.View.Master"
+             Title="Inicio" 
+             xmlns:vm="clr-namespace:Tamaleria_Miguelena.ViewModel">
+    <ContentPage.BindingContext>
+        <vm:Login_ViewModel></vm:Login_ViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Margin="25,5,25,5">
+            <Image Source="log.png"/>
+            <StackLayout >
+                <ListView x:Name="ListView" ItemSelected="ListView_ItemSelected" RowHeight="70" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate >
+                            <ViewCell>
+                                <Frame CornerRadius="20" >
+                                    <StackLayout Orientation="Horizontal"   >
+
+                                        <StackLayout>
+                                            <Image Source="{Binding Icon}" HeightRequest="25" WidthRequest="25" />
+                                        </StackLayout>
+
+                                        <StackLayout>
+                                            <Label Text="{Binding Title}" TextColor="#E8C70C" FontAttributes="Bold" FontSize="15" VerticalOptions="Center" />
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </Frame>
+                                
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

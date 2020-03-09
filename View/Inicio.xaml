@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Tamaleria_Miguelena.View.Inicio"
+             xmlns:vm="clr-namespace:Tamaleria_Miguelena.ViewModel">
+
+
+    <ContentPage.BindingContext>
+        <vm:Login_ViewModel></vm:Login_ViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout >
+            <Frame CornerRadius="20" BorderColor="#6DA644" Margin="20,20,20,20" VerticalOptions="CenterAndExpand">
+            <StackLayout>
+                    <Label Text="Bienvenido" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" TextColor="#6DA644"></Label>
+                    <Label Text="" x:Name="lblnombre" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" TextColor="#6DA644"></Label>
+            </StackLayout>
+            </Frame>
+            <Frame CornerRadius="15"  Margin="20" VerticalOptions="CenterAndExpand">
+                <Image Source="logo.png"/>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

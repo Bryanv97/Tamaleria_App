@@ -1,0 +1,15 @@
+﻿
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Tamaleria_Miguelena.View.TestPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Sucursal" Clicked="Button_Clicked" ></Button>
+            <Button Text="Inicio" Clicked="Button_Clicked_1" ></Button>
+            <Button Text="Pedidos" Clicked="Button_Clicked_2"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
